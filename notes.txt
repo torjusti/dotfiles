@@ -1,1 +1,2 @@
-npm install diff-so-fancy
+npm install -g diff-so-fancy
+npm install -g statik

@@ -9,6 +9,14 @@
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
+	amend = commit --amend --all
+
+	co = checkout
+
+	df = diff --color --color-words --abbrev
+
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
@@ -99,7 +107,21 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
+
+	[pager]
+	# insanely beautiful diffs ==> npm install -g diff-so-fancy
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+  # disabled until github.com/so-fancy/diff-so-fancy/pull/172 is resolved :(
+	# diffFilter = "diff-so-fancy"
+
+[fetch]
+	prune = true
+
+[diff]
+	compactionHeuristic = true
 
 [color]
 
@@ -151,12 +173,10 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+# push easily. http://stackoverflow.com/a/23918418/89484
 [push]
-
-	# Use the Git 1.x.x default to avoid errors on machines with old Git
-	# installations. To use `simple` instead, add this to your `~/.extra` file:
-	# `git config --global push.default simple`. See http://git.io/mMah-w.
-	default = matching
+	default = current
+	
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
