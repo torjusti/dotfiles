@@ -646,6 +646,7 @@ Plug 'wavded/vim-stylus',      { 'for': 'stylus' }
 Plug 'wlangstroth/vim-racket'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'lervag/vimtex'
 
 call plug#end()
 " }}}
