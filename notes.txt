@@ -1,2 +1,4 @@
 npm install -g diff-so-fancy
 npm install -g statik
+
+install pyenv to run python
