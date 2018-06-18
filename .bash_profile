@@ -82,3 +82,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export PATH="~/.yarn/bin:$PATH"
