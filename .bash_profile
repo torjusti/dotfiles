@@ -1,6 +1,5 @@
-# Add `~/bin` to the `$PATH`
+# Add `~/bin` and '~/.local/.bin' to the `$PATH`
 export PATH="$HOME/bin:$PATH";
-
 export PATH="$HOME/.local/bin:$PATH";
 
 # Load the shell dotfiles, and then some:
@@ -42,15 +41,10 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Add tab completion for `defaults read|write NSGlobalDomain`
-# You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults;
-
-# Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
-
+# Source Z for directory traversal.
 source ~/.z.sh
 
+# Load NVM
 export NVM_DIR="/home/bilde/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -85,4 +79,5 @@ export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Add Yarn to the path.
 export PATH="~/.yarn/bin:$PATH"
