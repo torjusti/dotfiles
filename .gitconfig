@@ -37,6 +37,9 @@
 	branches = branch -a
 	remotes = remote -v
 
+	# List aliases
+	aliases = config --get-regexp alias
+
 	# Amend the currently staged files to the latest commit
 	amend = commit --amend --reuse-message=HEAD
 
@@ -108,6 +111,7 @@
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
 
+<<<<<<< HEAD
 	[pager]
 	# insanely beautiful diffs ==> npm install -g diff-so-fancy
 	diff = diff-so-fancy | less --tabs=4 -RFX
@@ -122,6 +126,11 @@
 
 [diff]
 	compactionHeuristic = true
+=======
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+>>>>>>> 1b9145bb402a00a1ab695d7876706bfbbfc888af
 
 [color]
 
@@ -170,8 +179,9 @@
 
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
-	default = current
-	
+
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
