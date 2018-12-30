@@ -111,7 +111,10 @@
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
 
-<<<<<<< HEAD
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+
 	[pager]
 	# insanely beautiful diffs ==> npm install -g diff-so-fancy
 	diff = diff-so-fancy | less --tabs=4 -RFX
@@ -126,11 +129,8 @@
 
 [diff]
 	compactionHeuristic = true
-=======
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
->>>>>>> 1b9145bb402a00a1ab695d7876706bfbbfc888af
+	# Detect copies as well as renames
+	renames = copies
 
 [color]
 
@@ -156,11 +156,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[diff]
-
-	# Detect copies as well as renames
-	renames = copies
 
 [diff "bin"]
 
