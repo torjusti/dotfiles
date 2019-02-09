@@ -81,3 +81,5 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add Yarn to the path.
 export PATH="~/.yarn/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
