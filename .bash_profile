@@ -83,3 +83,6 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="~/.yarn/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Add direnv
+eval "$(direnv hook bash)"
