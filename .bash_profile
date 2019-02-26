@@ -44,10 +44,6 @@ fi;
 # Source Z for directory traversal.
 source ~/.z.sh
 
-# Load NVM
-export NVM_DIR="/home/bilde/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # generic colouriser
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n "$GRC" ]
