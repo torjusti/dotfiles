@@ -4,3 +4,5 @@ npm install -g statik
 install pyenv to run python
 nerdtree
 apt-vim
+
+todo: redo from scratch
